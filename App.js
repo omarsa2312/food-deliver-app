@@ -1,14 +1,28 @@
-import React from "react"
-import ReactDOM from "react-dom/client"
+import React from "react";
+import ReactDOM from "react-dom/client";
 
+const heading = <h1 className="head">Using JSX</h1>; 
 
-const parent = React.createElement("div", 
-{id: "parent"}, 
-React.createElement("div", 
-{id:"child"}, 
-[React.createElement("h1", {}, "I am a h1 tag"), 
-React.createElement("h2", {}, "I am a h2 tag")]));
+// React Component - Every thing is a component (button, list etc.)
+// Class Based Component
+// Functional Component  
+const ReactElement = <h2>Now I am putting my React Element inside a component</h2>; 
+const TitleComponent = ()=>{
+    return <h1>This is a title component</h1>
+};
+const HeadingComponent = ()=>{
+    return (<div>
+        {ReactElement}
+        
+    <h2>{100+200}</h2>
+    <TitleComponent />
+    <h1>Test</h1>
+    </div>)
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-console.log(root); 
-root.render(parent);
+
+root.render(<HeadingComponent />);
+
+
+
